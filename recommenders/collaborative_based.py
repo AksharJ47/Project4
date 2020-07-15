@@ -27,9 +27,12 @@
 
 """
 
+
 # Script dependencies
 import pandas as pd
 import numpy as np
+import bz2
+import _pickle as cPickle
 import pickle
 import copy
 from surprise import Reader, Dataset
@@ -38,12 +41,20 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Importing data
-movies_df = pd.read_csv('resources/data/movies.csv',sep = ',',delimiter=',')
-ratings_df = pd.read_csv('resources/data/ratings.csv')
+movies_df = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/movies.csv',sep = ',',delimiter=',')
+ratings_df = pd.read_csv('~/unsupervised_data/unsupervised_movie_data/train.csv')
 ratings_df.drop(['timestamp'], axis=1,inplace=True)
 
+# Load any compressed pickle file
+def decompress_pickle(file):
+    data = bz2.BZ2File(file, 'rb')
+    data = cPickle.load(data)
+    return data
+
 # We make use of an SVD model trained on a subset of the MovieLens 10k dataset.
-model=pickle.load(open('resources/models/colab_model.pickle', 'rb'))
+
+model = decompress_pickle('~/c_model.pbz2')
+
 
 def prediction_item(item_id):
     """Map a given favourite movie to users within the

@@ -2,7 +2,7 @@
 
 ![Movie_Recommendations](resources/imgs/Image_header.png)
 
-This repository forms the basis of *Task 2* for the **Unsupervised Predict** within EDSA's Data Science course. It hosts template code which will enable students to deploy a basic recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
+Deploy a basic recommender engine based upon the [Streamlit](https://www.streamlit.io/) web application framework.
 
 As part of the predict, students are expected to expand on this base template; improving (and fixing) the given base recommender algorithms, as well as providing greater context to the problem and attempted solutions through additional application pages/functionality.    
 
@@ -37,7 +37,7 @@ The primary goal of this task within the Unsupervised Predict is to make student
 In order to make your improvements, we have a few instructions to guide you:
   - **Only modify the sections of the base `edsa_recommender.py` file which have been indicated**. The code which has been designated to be left unaltered is used to provide a standard interface during our automated testing of your app. Changing this code may result in our system assigning you a mark of 0 :(
 
-  - **Do not modify the function name and signature for the `*_model` functions in `collaborative_based.py` and `content_based.py`**. As stated above, these functions are used during automated testing. You are, however, supposed to modify/improve the content of these functions with your algorithms developed within Task 1 of the Unsupervised Predict.
+  - **Do not modify the function name and signature for the `*_model` functions in `collaborative_based.py` and `content_based.py`**. As stated above, these functions are used during automated testing. You are, however, supposed to modify/improve the content of these functions with your algorithms developed within Task 1.
 
   - **Add additional data where needed**. The data files which we've provided you within this repo template serve only as examples. For correct/improved functioning, you may need to add additional data files from sources such as the Kaggle challenge in Task 1, or the S3 bucket provided to you during this sprint. (**NB:** Github doesn't accept large file uploads during a commit. As such, you may need to keep only local copies of your data files. Have a look at how to exclude files from your git commits using a `.gitignore` file [here](https://docs.github.com/en/github/using-git/ignoring-files))
 
